@@ -123,5 +123,15 @@ const likes = []
 const upVote = document.querySelectorAll('.like-button')
 // ciclo per aumentare il numero di like
 for (let i = 0; i < upVote.length; i++){
-    
+    // creo evento click al bottone
+    upVote[i].addEventListener('click', 
+    // funzione evento click
+        function(){
+            // prendo la classe in CSS che da il colore verde al bottone e la aggiungo
+            upVote[i].classList.add('like-button--liked')
+            // inserisco nell'array l'id dei post in cui ho messo like
+            likes.push(posts[i].id)
+            console.log(likes)
+        }
+    )
 }
