@@ -106,7 +106,12 @@ function postInnerHTML(post) {
     </div>`;
   }
 
+
+  
 // MAIN
 // seleziono il container del mio DOM 
 const container = document.querySelector('#container');
-
+// Ciclo tutti gli oggenti all'interno di "posts" e li aggiungo al container
+for (let i = 0; i < posts.length; i++) {
+    container.innerHTML += postInnerHTML(posts[i]);
+  }
