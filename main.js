@@ -109,29 +109,36 @@ function postInnerHTML(post) {
 
   
 // MAIN
+let likedPosts = []
 // seleziono il container del mio DOM 
-const container = document.querySelector('#container');
+const container = document.querySelector('#container')
 // Ciclo tutti gli oggenti all'interno di "posts" e li aggiungo al container
 for (let i = 0; i < posts.length; i++) {
     container.innerHTML += postInnerHTML(posts[i]);
   }
 
 // MILESTONE 2 (event click)
-// creo array vuoto
-const likes = []
-// selezione il bottone dei like dall'html
-const upVote = document.querySelectorAll('.like-button')
-// ciclo per aumentare il numero di like
-for (let i = 0; i < upVote.length; i++){
-    // creo evento click al bottone
-    upVote[i].addEventListener('click', 
-    // funzione evento click
-        function(){
-            // prendo la classe in CSS che da il colore verde al bottone e la aggiungo
-            upVote[i].classList.add('like-button--liked')
-            // inserisco nell'array l'id dei post in cui ho messo like
-            likes.push(posts[i].id)
-            console.log(likes)
-        }
-    )
+const elements = document.querySelectorAll(".post")
+for (let i = 0; i < elements.length; i++) {
+  const post = elements[i]
+
+  const button = post.querySelector(".like-button")
+  const counter = post.querySelector(".js-likes-counter")
+  // take the post id from the data attribute of the like button
+  const id = button.getAttribute("data-id");
+
+  // evento click al bottone
+  button.addEventListener("click", function () {
+    //   tolgo like  se già presente
+    if (button.classList.contains("like-button--liked")) {
+      likedPosts = likedPosts.filter((id) => id !== id)
+      button.classList.remove("like-button--liked")
+      counter.innerHTML--
+    //  altrimenti aggiungo like
+    } else {
+      likedPosts.push(id)
+      button.classList.add("like-button--liked")
+      counter.innerHTML++
+    }
+  })
 }
