@@ -105,3 +105,8 @@ function postInnerHTML(post) {
       </div>
     </div>`;
   }
+
+// MAIN
+// seleziono il container del mio DOM 
+const container = document.querySelector('#container');
+
