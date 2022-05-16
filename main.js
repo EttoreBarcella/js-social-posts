@@ -55,7 +55,7 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
-
+// MILESTONE 1 (stamp posts in HTML)
 
 // FUNCTION
 // DOM SECTION
@@ -115,3 +115,13 @@ const container = document.querySelector('#container');
 for (let i = 0; i < posts.length; i++) {
     container.innerHTML += postInnerHTML(posts[i]);
   }
+
+// MILESTONE 2 (event click)
+// creo array vuoto
+const likes = []
+// selezione il bottone dei like dall'html
+const upVote = document.querySelectorAll('.like-button')
+// ciclo per aumentare il numero di like
+for (let i = 0; i < upVote.length; i++){
+    
+}
