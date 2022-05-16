@@ -38,7 +38,7 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "https://www.fumettologica.it/wp-content/uploads/2019/06/pepe-the-frog-670x366.jpg"
         },
         "likes": 56,
         "created": "2021-04-03"
